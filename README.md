@@ -25,7 +25,7 @@ this is a relational data base solution for the company TechCare Soltions, where
 │── 📄 MR_Diagram.png and DER_Diagram.png
 │── 📄 diagrama_er.png
 ---
-
+```
 ##  How to execute the project
 
 ### 1. Enter to the folder
@@ -33,7 +33,6 @@ this is a relational data base solution for the company TechCare Soltions, where
 ```bash
 cd <DB_Leonardo_Riwi>
 ```
-
 ### 2. Open MySQL Workbench
 
 Create a new data base
@@ -158,6 +157,8 @@ create table movements(
 );
 
 ## Extra points
+	## Extra points
+    I did a view of the filtering of technicial requirements
 
     
 
