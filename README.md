@@ -159,6 +159,21 @@ create table movements(
 ## Extra points
 	## Extra points
     I did a view of the filtering of technicial requirements
+	-- extra point view by Technical Performance.
+	CREATE OR REPLACE VIEW vw_rendimiento_tecnicos AS -- we use AS when we want to create an alias to a table or some data
+	SELECT -- call the different data 
+	    t.id AS tecnico_id, -- and we give an alias to it so t.id is the new alias of tecnico_id
+	    t.nombre AS nombre_tecnico,
+	    COUNT(DISTINCT m.workorder) AS total_ordenes_atendidas,
+	    SUM(m.hours) AS total_horas_trabajadas,
+	    SUM(m.cost) AS costo_total_generado,
+	    ROUND(AVG(m.hours), 2) AS promedio_horas_por_orden -- we use round to round a decimal number and in this case with two digits
+	FROM technicians t
+	INNER JOIN orders o ON t.id = o.id_technician -- we use inner join to extract data from two different tables, its very usefull for information viewing
+	INNER JOIN movements m ON o.id = m.id_order
+	GROUP BY t.id, t.nombre; -- we make a gtoup by nombre_tecnico and id_tecnico.
+	
+	SELECT * FROM vw_rendimiento_tecnicos; -- and finally to use this view we need to make a consult of the view, so the na,me is vw_rendimiento_tecnicos
 
     
 
