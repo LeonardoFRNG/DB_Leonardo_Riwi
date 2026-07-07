@@ -158,7 +158,8 @@ create table movements(
 
 -- consults
 
-  1-- SELECT
+  1--
+SELECT
         t.nombre AS tecnico,
         COUNT(o.id) AS total_ordenes
     FROM technicians t
@@ -166,7 +167,8 @@ create table movements(
     ON t.id = o.id_technician
     GROUP BY t.nombre;
 
-    2-- SELECT
+    2--
+SELECT
         c.nombre AS ciudad,
         COUNT(m.id) AS total_servicios
     FROM city c
@@ -176,7 +178,8 @@ create table movements(
     ON cl.id = m.id_client
     GROUP BY c.nombre;
 
-    3-- SELECT
+    3--
+SELECT
         st.nombre AS tipo_servicio,
         COUNT(o.id) AS total_servicios
     FROM service_types st
@@ -184,7 +187,8 @@ create table movements(
     ON st.id = o.id_service_type
     GROUP BY st.nombre;
 
-    4-- SELECT
+    4--
+SELECT
         e.nombre AS equipo,
         COUNT(m.id) AS mantenimientos
     FROM equipments e
@@ -192,7 +196,8 @@ create table movements(
     ON e.id = m.id_equipment
     GROUP BY e.nombre;
 
-    5-- SELECT
+    5--
+SELECT
         c.nombre AS cliente,
         COUNT(m.id) AS total_ordenes
     FROM clients c
@@ -200,7 +205,8 @@ create table movements(
     ON c.id = m.id_client
     GROUP BY c.nombre;
 
-    6-- SELECT
+    6--
+SELECT
         b.name AS sede,
         COUNT(m.id) AS total_ordenes
     FROM branch b
